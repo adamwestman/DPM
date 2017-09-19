@@ -6,7 +6,10 @@ function M.new()
 end
 
 function M.save_to_file(project, path)
-
+    local file = io.open("game.project", "w+")
+    file:write("[project]\n")
+    file:write("title=example\n")
+    io.close(file)
 end
 
 function M.read_from_file(path)
