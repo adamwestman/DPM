@@ -18,10 +18,10 @@ $ ./build.sh
 ```
 build.sh will:
 1. Verify dependencies and download if possible.
-1. Compile all lua source files in ```src/```
+1. Compile all lua source files in ```src/``` using [lua-destiller](https://github.com/yi/node-lua-distiller)
 1. Output combined lua in ```build/dist.lua```
 1. Invoke the Makefile inside ```vendor/srlua```
-1. Compile executable from ```src/main.lua```
+1. Compile executable from ```build/dist.lua``` using [SRLua](https://github.com/LuaDist/srlua)
 1. Output compiled executable output in ```build/dpm.o```
 1. Execute ```$ ./build/dpm.o -V --help```
 
