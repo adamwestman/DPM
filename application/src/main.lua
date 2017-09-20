@@ -5,9 +5,11 @@ local help_txt = [[
     DPM - the Defold Package Manager
 
     Commands:
-    -h --help        : output usage information
-    -V --version     : output the version number
-    -i --init        : setup a new dpm library
+    -h --help        : output DPM usage information
+    -V --version     : output DPM version number
+    init             : setup a new local DPM library
+    install          : add a project dependency
+    version          : output project version number
 
     Options:
     --debug          : output all debug information
