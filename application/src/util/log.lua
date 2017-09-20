@@ -16,7 +16,7 @@ end
 local warning = function(...) 
     log(3, "WARNING", ...)
 end
-local critial = function(...) 
+local critical = function(...) 
     log(4, "CRITIAL", ...)
     if log_level > 2 then
         error("Failed at execution.\nTo output additional information specify --debug or --info")

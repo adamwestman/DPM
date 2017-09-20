@@ -9,7 +9,6 @@ local help_txt = [[
     -V --version     : output DPM version number
     init             : setup a new local DPM library
     install          : add a project dependency
-    version          : output project version number
 
     Options:
     --debug          : output all debug information
@@ -18,8 +17,9 @@ local help_txt = [[
     --error          : output error level and above debug information
 ]]
 
-
-for i, cmd in ipairs(arg) do
+while #arg > 0 do
+    local cmd = table.remove(arg, 1)
+    
     if cmd == "--debug" then
         log.set_level(1)
     end
@@ -35,9 +35,11 @@ for i, cmd in ipairs(arg) do
     
     if cmd == "-h" or cmd == "--help" then
         print(help_txt)
+    elseif cmd == "-V" or cmd == "--version" then
+        print("DPM Version: ", dpm.VERSION)
     end
 
-    dpm.command(cmd)
-
-    log.d("cmd", i , "=", cmd)
+    log.d("cmd", cmd)
+    
+    dpm.command(cmd, arg)
 end
