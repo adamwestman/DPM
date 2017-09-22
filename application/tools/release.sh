@@ -31,5 +31,7 @@ fi
 git add --all
 git commit -m "Release $NEXT_VERSION"
 
-#git tag ${NEXT_VERSION}
-#git push origin ${NEXT_VERSION}
+#git tag $NEXT_VERSION
+#git push origin $NEXT_VERSION
+
+./tools/publish.sh $NEXT_VERSION
