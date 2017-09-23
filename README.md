@@ -3,7 +3,7 @@ The Defold Package Manager
 
 # Install
 
-Install from [homebrew](https://brew.sh) ```sh $ brew install dpm```
+Install from [homebrew](https://brew.sh) ```$ brew install dpm```
 
 # Usage
 
