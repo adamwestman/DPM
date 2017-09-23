@@ -1,6 +1,10 @@
 # DPM
 The Defold Package Manager
 
+# Install
+
+Install from [homebrew](https://brew.sh) ```sh $ brew install dpm```
+
 # Usage
 
 Setup a new project named Example, which depends on the Debeat library version 1.2.+, where + will be the latest patch version available.
