@@ -1,6 +1,10 @@
 #!/bin/bash
 
-echo "Release from $(pwd)"
+if [ -n "$1" ]; then
+    echo "Release from $(pwd) to github account $1"
+else
+    echo "Release from $(pwd) to local"
+fi
 
 echo "### Build ###"
 ./build.sh
@@ -11,7 +15,7 @@ cp build/dpm.o ../bin/
 
 echo
 echo
-echo "### Publish ###"
+echo "### Push to Git ###"
 
 echo "  Modifications:"
 git status
@@ -31,7 +35,10 @@ fi
 git add --all
 git commit -m "Release $NEXT_VERSION"
 
-#git tag $NEXT_VERSION
-#git push origin $NEXT_VERSION
+if [ -n "$1" ]; then
+    echo "tag and push"
+    git tag $NEXT_VERSION
+    git push origin $NEXT_VERSION
+fi
 
-./tools/publish.sh $NEXT_VERSION
+./tools/publish.sh $NEXT_VERSION $1

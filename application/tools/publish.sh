@@ -21,15 +21,22 @@ brew install --verbose --debug dpm
 
 brew test DPM
 
-exit
+if [ -z "$2" ]; then
+    echo "Global publish requires github account name, aborting"
+    exit
+else
+    echo "public release to brew"
+    exit
+fi
 
 brew update # required in more ways than you think (initializes the brew git repository if you don't already have it)
 cd $(brew --repo homebrew/core)
 # Create a new git branch for your formula so your pull request is easy to
 # modify if any changes come up during review.
-BRANCH_NAME="dpm version $1"
+BRANCH_NAME="dpm_version_$1"
 git checkout -b $BRANCH_NAME
 git add Formula/dpm.rb
 git commit
 
-git push https://github.com/adamwestman/homebrew-core/ $BRANCH_NAME
+echo "Publishing from github account $2"
+git push https://github.com/$2/homebrew-core/ $BRANCH_NAME
