@@ -33,7 +33,9 @@ name={game.project title}
 version={game.project version}
 ```
 ## Install
-The ```$ dpm install X``` command installs a new dependency to the ```dpm.package``` and outputs the resolved url to ```game.project``` if available. If no game.project is available a new one will be generated.
+The ```$ dpm install X``` command installs a new dependency to the ```dpm.package``` and outputs the resolved url to ```game.project``` if available. If no ```game.project``` is available a new one will be generated.
+
+Eg, ```$ dpm install debeat 1.2.+```would output the following to ```dpm.package``` and ```game.project``` after seeing that debeat depends on extension-openal.
 ```
 [package]
 name=example
