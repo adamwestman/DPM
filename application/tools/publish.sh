@@ -26,7 +26,6 @@ if [ -z "$2" ]; then
     exit
 else
     echo "public release to brew"
-    exit
 fi
 
 brew update # required in more ways than you think (initializes the brew git repository if you don't already have it)
