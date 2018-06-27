@@ -1,7 +1,7 @@
 # DPM
 The Defold Package Manager
 
-Provides transient dependency management for Defold projects. No longer worry about additional dependencies for native extensions and libraries.
+Provides transitive dependency management for Defold projects. No longer worry about additional dependencies for native extensions and libraries.
 
 # Install
 Install from [homebrew](https://brew.sh) ```$ brew install dpm```
